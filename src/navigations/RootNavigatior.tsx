@@ -6,7 +6,7 @@ import {
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 
-import Colors from '../config/theme/Colors';
+import Colors from '../config/Theme/Colors';
 
 import TabNavigator, {TabParamList} from './TabNavigator';
 import DetailScreen from '../screens/DetailScreen';
@@ -20,26 +20,28 @@ const Stack = createStackNavigator<RootParamList>();
 
 const RootStack = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        cardStyle: style.cardStyle,
-      }}>
-      <Stack.Screen
-        name="Tab"
-        component={TabNavigator}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Detail"
-        component={DetailScreen}
-        options={{
-          title: 'Detail',
-          headerStyle: style.headerStyle,
-          headerTintColor: Colors.WHITE,
+    <>
+      <Stack.Navigator
+        screenOptions={{
           cardStyle: style.cardStyle,
-        }}
-      />
-    </Stack.Navigator>
+        }}>
+        <Stack.Screen
+          name="Tab"
+          component={TabNavigator}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Detail"
+          component={DetailScreen}
+          options={{
+            title: 'Detail',
+            headerStyle: style.headerStyle,
+            headerTintColor: Colors.WHITE,
+            cardStyle: style.cardStyle,
+          }}
+        />
+      </Stack.Navigator>
+    </>
   );
 };
 

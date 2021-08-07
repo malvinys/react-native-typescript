@@ -3,7 +3,7 @@ import React from 'react';
 import {Image} from 'react-native';
 
 import {HOME_ICON, SETTING_ICON} from '../components/Icons/Icons';
-import Colors from '../config/theme/Colors';
+import Colors from '../config/Theme/Colors';
 
 import HomeScreen from '../screens/HomeScreen';
 import SettingScreen from '../screens/SettingScreen';
@@ -17,51 +17,53 @@ const Tab = createBottomTabNavigator<TabParamList>();
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator
-      backBehavior="none"
-      screenOptions={{
-        unmountOnBlur: false,
-      }}
-      tabBarOptions={{
-        activeTintColor: Colors.WHITE,
-        inactiveTintColor: Colors.GREY,
-        tabStyle: style.tabBarOptions.tabStyle,
-        style: style.tabBarOptions.style,
-        showLabel: false,
-      }}>
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={HOME_ICON}
-              style={{
-                ...style.tabBarIcon,
-                tintColor: focused ? Colors.WHITE : Colors.GREY,
-              }}
-              resizeMode="contain"
-            />
-          ),
+    <>
+      <Tab.Navigator
+        backBehavior="none"
+        screenOptions={{
+          unmountOnBlur: false,
         }}
-      />
-      <Tab.Screen
-        name="Setting"
-        component={SettingScreen}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <Image
-              source={SETTING_ICON}
-              style={{
-                ...style.tabBarIcon,
-                tintColor: focused ? Colors.WHITE : Colors.GREY,
-              }}
-              resizeMode="contain"
-            />
-          ),
-        }}
-      />
-    </Tab.Navigator>
+        tabBarOptions={{
+          activeTintColor: Colors.WHITE,
+          inactiveTintColor: Colors.GREY,
+          tabStyle: style.tabBarOptions.tabStyle,
+          style: style.tabBarOptions.style,
+          showLabel: false,
+        }}>
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <Image
+                source={HOME_ICON}
+                style={{
+                  ...style.tabBarIcon,
+                  tintColor: focused ? Colors.WHITE : Colors.GREY,
+                }}
+                resizeMode="contain"
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Setting"
+          component={SettingScreen}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <Image
+                source={SETTING_ICON}
+                style={{
+                  ...style.tabBarIcon,
+                  tintColor: focused ? Colors.WHITE : Colors.GREY,
+                }}
+                resizeMode="contain"
+              />
+            ),
+          }}
+        />
+      </Tab.Navigator>
+    </>
   );
 };
 

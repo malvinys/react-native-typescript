@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, Button} from 'react-native';
+import {ScrollView, Button} from 'react-native';
 
 import Container from '../components/Container/Container';
 
@@ -8,13 +8,12 @@ interface iSettingScreen {
 }
 
 const SettingScreen = ({navigation}: iSettingScreen) => (
-  <Container>
-    <Text>Setting Screen</Text>
-    <Button
-      title="Go to Details"
-      onPress={() => navigation.navigate('Detail')}
-    />
-  </Container>
+  <>
+    <Container>
+      <ScrollView />
+      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+    </Container>
+  </>
 );
 
 export default SettingScreen;
