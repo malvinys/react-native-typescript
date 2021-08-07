@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ViewStyle} from 'react-native';
+import {View, ViewStyle, ScrollView} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
@@ -10,7 +10,9 @@ interface IContainer {
 
 const Container = ({styleProps, children}: IContainer) => (
   <>
-    <View style={{...style.container, ...styleProps}}>{children}</View>
+    <View style={{...style.container, ...styleProps}}>
+      <ScrollView>{children}</ScrollView>
+    </View>
   </>
 );
 

@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Button,
-  Text,
-  TouchableOpacity,
-  View,
-  ViewStyle,
-  ScrollView,
-} from 'react-native';
+import {Button, Text, TouchableOpacity, View, ViewStyle} from 'react-native';
 
 import Colors from '../config/Theme/Colors';
 
@@ -30,20 +23,18 @@ const HomeScreen = ({navigation}: iHomeScreen) => {
     <>
       <Header />
       <Container>
-        <ScrollView>
-          <TouchableOpacity onPress={() => handleCardClick()}>
-            <Card styleProps={{...style.card.container}}>
-              <ImageIcon
-                iconSource={WALLET_ICON}
-                styleProps={{styleContainerProps: {...style.card.image}}}
-              />
-              <View style={{...style.card.content}}>
-                <Text>Test Card</Text>
-                <ProgressBar progress="70%" />
-              </View>
-            </Card>
-          </TouchableOpacity>
-        </ScrollView>
+        <TouchableOpacity onPress={() => handleCardClick()}>
+          <Card styleProps={{...style.card.container}}>
+            <ImageIcon
+              iconSource={WALLET_ICON}
+              styleProps={{styleContainerProps: {...style.card.image}}}
+            />
+            <View style={{...style.card.content}}>
+              <Text>Test Card</Text>
+              <ProgressBar progress="70%" />
+            </View>
+          </Card>
+        </TouchableOpacity>
       </Container>
       <Footer styleProps={{...style.footer}}>
         <Button
