@@ -9,10 +9,12 @@ import React from 'react';
 import Colors from '../config/Theme/Colors';
 
 import TabNavigator, {TabParamList} from './TabNavigator';
+import WelcomeScreen from '../screens/WelcomeScreen';
 import DetailScreen from '../screens/DetailScreen';
 
 export type RootParamList = {
   Tab: NavigatorScreenParams<TabParamList>;
+  Welcome: undefined;
   Detail: undefined;
 };
 
@@ -25,6 +27,16 @@ const RootStack = () => {
         screenOptions={{
           cardStyle: style.cardStyle,
         }}>
+        <Stack.Screen
+          name="Welcome"
+          component={WelcomeScreen}
+          options={{
+            title: 'Welcome',
+            headerStyle: style.headerStyle,
+            headerTintColor: Colors.WHITE,
+            cardStyle: style.cardStyle,
+          }}
+        />
         <Stack.Screen
           name="Tab"
           component={TabNavigator}

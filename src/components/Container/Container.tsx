@@ -5,7 +5,7 @@ import Colors from '../../config/Theme/Colors';
 
 interface IContainer {
   styleProps?: any;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const Container = ({styleProps, children}: IContainer) => (

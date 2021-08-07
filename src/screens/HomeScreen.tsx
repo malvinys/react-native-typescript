@@ -11,11 +11,11 @@ import ImageIcon from '../components/Image/ImageIcon/ImageIcon';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
 import {WALLET_ICON} from '../components/Icons/Icons';
 
-interface iHomeScreen {
+interface IHomeScreen {
   navigation: any;
 }
 
-const HomeScreen = ({navigation}: iHomeScreen) => {
+const HomeScreen = ({navigation}: IHomeScreen) => {
   const handleCardClick = () => {
     navigation.navigate('Detail');
   };

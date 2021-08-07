@@ -1,18 +1,19 @@
 import React from 'react';
-import {ScrollView, Button} from 'react-native';
+import {Button} from 'react-native';
 
 import Container from '../components/Container/Container';
+import Footer from '../components/Footer/Footer';
 
-interface iSettingScreen {
+interface ISettingScreen {
   navigation: any;
 }
 
-const SettingScreen = ({navigation}: iSettingScreen) => (
+const SettingScreen = ({navigation}: ISettingScreen) => (
   <>
-    <Container>
-      <ScrollView />
+    <Container />
+    <Footer>
       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
-    </Container>
+    </Footer>
   </>
 );
 

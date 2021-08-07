@@ -4,22 +4,19 @@ import {Button} from 'react-native';
 import Containter from '../components/Container/Container';
 import Footer from '../components/Footer/Footer';
 
-interface IDetailScreen {
+interface IWelcomeScreen {
   navigation: any;
 }
 
-const DetailScreen = ({navigation}: IDetailScreen) => {
+const WelcomeScreen = ({navigation}: IWelcomeScreen) => {
   return (
     <>
       <Containter />
       <Footer>
-        <Button
-          title="Go to Home"
-          onPress={() => navigation.navigate('Home')}
-        />
+        <Button title="Go to Home" onPress={() => navigation.navigate('Tab')} />
       </Footer>
     </>
   );
 };
 
-export default DetailScreen;
+export default WelcomeScreen;
