@@ -31,9 +31,7 @@ const RootStack = () => {
           name="Welcome"
           component={WelcomeScreen}
           options={{
-            title: 'Welcome',
-            headerStyle: style.headerStyle,
-            headerTintColor: Colors.WHITE,
+            headerShown: false,
             cardStyle: style.cardStyle,
           }}
         />
