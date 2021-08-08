@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ViewStyle, Text, TextStyle} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 import Constant from '../../config/Constant/Constant';
@@ -39,12 +39,7 @@ const Header = ({
   </>
 );
 
-interface IStyle {
-  headerContainer: ViewStyle;
-  headerTitle: TextStyle;
-}
-
-const style: IStyle = {
+const style = StyleSheet.create({
   headerContainer: {
     paddingVertical: 8,
     paddingHorizontal: 16,
@@ -52,6 +47,6 @@ const style: IStyle = {
   headerTitle: {
     fontSize: 16,
   },
-};
+});
 
 export default Header;

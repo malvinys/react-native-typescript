@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Text, TouchableOpacity, View, ViewStyle} from 'react-native';
+import {Button, Text, TouchableOpacity, View, StyleSheet} from 'react-native';
 
 import Colors from '../config/Theme/Colors';
 
@@ -24,12 +24,12 @@ const HomeScreen = ({navigation}: IHomeScreen) => {
       <Header />
       <Container>
         <TouchableOpacity onPress={() => handleCardClick()}>
-          <Card styleProps={{...style.card.container}}>
+          <Card styleProps={{...style.cardContainer}}>
             <ImageIcon
               iconSource={WALLET_ICON}
-              styleProps={{styleContainerProps: {...style.card.image}}}
+              styleProps={{styleContainerProps: {...style.cardImage}}}
             />
-            <View style={{...style.card.content}}>
+            <View style={{...style.cardContent}}>
               <Text>Test Card</Text>
               <ProgressBar progress="70%" />
             </View>
@@ -47,32 +47,21 @@ const HomeScreen = ({navigation}: IHomeScreen) => {
   );
 };
 
-interface IStyle {
-  card: {
-    container: ViewStyle;
-    image: ViewStyle;
-    content: ViewStyle;
-  };
-  footer: ViewStyle;
-}
-
-const style: IStyle = {
-  card: {
-    container: {
-      flexDirection: 'row',
-      flex: 1,
-    },
-    image: {
-      marginRight: 8,
-    },
-    content: {
-      flex: 1,
-    },
+const style = StyleSheet.create({
+  cardContainer: {
+    flexDirection: 'row',
+    flex: 1,
+  },
+  cardImage: {
+    marginRight: 8,
+  },
+  cardContent: {
+    flex: 1,
   },
   footer: {
     paddingHorizontal: 16,
     paddingBottom: 16,
   },
-};
+});
 
 export default HomeScreen;

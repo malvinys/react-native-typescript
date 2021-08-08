@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ViewStyle} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
@@ -21,12 +21,8 @@ const Footer = ({
   </>
 );
 
-interface IStyle {
-  footer: ViewStyle;
-}
-
-const style: IStyle = {
+const style = StyleSheet.create({
   footer: {},
-};
+});
 
 export default Footer;

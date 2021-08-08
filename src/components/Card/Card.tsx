@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ViewStyle} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
@@ -21,17 +21,13 @@ const Card = ({
   </>
 );
 
-interface IStyle {
-  card: ViewStyle;
-}
-
-const style: IStyle = {
+const style = StyleSheet.create({
   card: {
     width: '100%',
     height: 'auto',
     padding: 8,
     borderRadius: 4,
   },
-};
+});
 
 export default Card;

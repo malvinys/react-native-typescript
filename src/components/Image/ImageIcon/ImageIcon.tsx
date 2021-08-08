@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ViewStyle, Image, ImageStyle} from 'react-native';
+import {View, Image, StyleSheet} from 'react-native';
 
 import Colors from '../../../config/Theme/Colors';
 
@@ -39,12 +39,7 @@ const ImageIcon = ({
   </>
 );
 
-interface IStyle {
-  imageIconContainer: ViewStyle;
-  imageIconContent: ImageStyle;
-}
-
-const style: IStyle = {
+const style = StyleSheet.create({
   imageIconContainer: {
     width: 40,
     height: 40,
@@ -56,6 +51,6 @@ const style: IStyle = {
     height: 26,
     width: 26,
   },
-};
+});
 
 export default ImageIcon;

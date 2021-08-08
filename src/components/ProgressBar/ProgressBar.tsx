@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ViewStyle} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
@@ -38,12 +38,7 @@ const ProgressBar = ({
   </>
 );
 
-interface IStyle {
-  progressBackground: ViewStyle;
-  progressBar: ViewStyle;
-}
-
-const style: IStyle = {
+const style = StyleSheet.create({
   progressBackground: {
     borderRadius: 4,
     width: '100%',
@@ -52,6 +47,6 @@ const style: IStyle = {
     borderRadius: 4,
     borderWidth: 4,
   },
-};
+});
 
 export default ProgressBar;

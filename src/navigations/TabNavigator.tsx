@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {Image} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 
 import {HOME_ICON, SETTING_ICON} from '../components/Icons/Icons';
 import Colors from '../config/Theme/Colors';
@@ -26,8 +26,8 @@ const TabNavigator = () => {
         tabBarOptions={{
           activeTintColor: Colors.WHITE,
           inactiveTintColor: Colors.GREY,
-          tabStyle: style.tabBarOptions.tabStyle,
-          style: style.tabBarOptions.style,
+          tabStyle: style.tabBarOptionsTabStyle,
+          style: style.tabBarOptionsStyle,
           showLabel: false,
         }}>
         <Tab.Screen
@@ -67,29 +67,22 @@ const TabNavigator = () => {
   );
 };
 
-interface IStyle {
-  tabBarOptions: any;
-  tabBarIcon: any;
-}
-
-const style: IStyle = {
-  tabBarOptions: {
-    tabStyle: {
-      backgroundColor: Colors.BACKGROUND_TAB,
-      borderTopLeftRadius: 0,
-      borderTopRightRadius: 0,
-    },
-    style: {
-      backgroundColor: Colors.BACKGROUND_TAB,
-      borderTopWidth: 0,
-      borderTopLeftRadius: 0,
-      borderTopRightRadius: 0,
-    },
+const style = StyleSheet.create({
+  tabBarOptionsTabStyle: {
+    backgroundColor: Colors.BACKGROUND_TAB,
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+  },
+  tabBarOptionsStyle: {
+    backgroundColor: Colors.BACKGROUND_TAB,
+    borderTopWidth: 0,
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
   },
   tabBarIcon: {
     height: 26,
     width: 26,
   },
-};
+});
 
 export default TabNavigator;

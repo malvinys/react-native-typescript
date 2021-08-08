@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ViewStyle} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
@@ -22,12 +22,8 @@ const Line = ({color = Colors.LINE, width = 0.5, styleProps}: ILine) => (
   </>
 );
 
-interface IStyle {
-  line: ViewStyle;
-}
-
-const style: IStyle = {
+const style = StyleSheet.create({
   line: {},
-};
+});
 
 export default Line;

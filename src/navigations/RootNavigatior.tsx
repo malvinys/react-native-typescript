@@ -5,6 +5,7 @@ import {
 } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
+import {StyleSheet} from 'react-native';
 
 import Colors from '../config/Theme/Colors';
 
@@ -46,7 +47,7 @@ const RootStack = () => {
           options={{
             title: 'Detail',
             headerStyle: style.headerStyle,
-            headerTintColor: Colors.WHITE,
+            headerTintColor: style.headerTintColor.color,
             cardStyle: style.cardStyle,
           }}
         />
@@ -67,22 +68,18 @@ const RootNavigator = React.forwardRef<
 });
 RootNavigator.displayName = 'RootNavigator';
 
-interface IStyle {
-  headerStyle: any;
-  headerTintColor: string;
-  cardStyle: any;
-}
-
-const style: IStyle = {
+const style = StyleSheet.create({
   headerStyle: {
     backgroundColor: Colors.BACKGROUND,
     shadowColor: Colors.BACKGROUND,
     borderBottomWidth: 0,
   },
-  headerTintColor: Colors.WHITE,
+  headerTintColor: {
+    color: Colors.WHITE,
+  },
   cardStyle: {
     backgroundColor: Colors.BACKGROUND,
   },
-};
+});
 
 export default RootNavigator;

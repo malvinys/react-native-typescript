@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ViewStyle, ScrollView} from 'react-native';
+import {View, ScrollView, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
@@ -16,17 +16,13 @@ const Container = ({styleProps, children}: IContainer) => (
   </>
 );
 
-interface IStyle {
-  container: ViewStyle;
-}
-
-const style: IStyle = {
+const style = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
     backgroundColor: Colors.BACKGROUND,
     paddingHorizontal: 16,
   },
-};
+});
 
 export default Container;
