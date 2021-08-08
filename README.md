@@ -43,3 +43,8 @@ You can check this tutorial for the detail https://blog.logrocket.com/building-a
   - `android\drawable-xxxhdpi`
 - Copy generated files into `react-native-typescript\android\app\src\main\res\`
 - Change `splash_screen_default` into `splash_screen` at `react-native-typescript\android\app\src\main\res\layout\launch_screen.xml`
+
+## How To Bundle Project
+- Android (APK)
+  - Run `yarn bundle:android`
+  - Open react-native-typescript\android\app\build\outputs\apk\debug\app-debug.apk`
