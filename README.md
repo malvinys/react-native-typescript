@@ -8,23 +8,29 @@ This project is my personal template project for react-native-typescript and i w
 
 ## How To Run
 - Clone Project
-- Change to root directory project
+- Open directory project
 - Run `yarn install`
 - Connect your device or run your `Android Virtual Device` and active `Developer options`
 - Open your first terminal and run `yarn start`
 - Open your second terminal and run `yarn android` 
 
 ## How To Change App Name
+You can check this tutorial for the detail https://stackoverflow.com/questions/38580858/how-to-change-display-name-of-an-app-in-react-native
 - Search `app_name`
 - Change app display name at `react-native-typescript\android\app\src\main\res\values\strings.xml` and change the value of `<string name="app_name">React Native Typescript</string>`.
   <br>
-  You can check the detail on https://stackoverflow.com/questions/38580858/how-to-change-display-name-of-an-app-in-react-native
 - Change default app name on Header, open `react-native-typescript\src\config\Constant\Constant.tsx` and change the value of `const APP_NAME`
 
 ## How To Change Version
 - Search `versionCode 1`
 - Open file `react-native-typescript\android\app\build.gradle`
 - Change the `versionCode` and `versionName`
+
+## How To Change Icon
+You can check this tutorial for the detail https://medium.com/@ansonmathew/app-icon-in-react-native-ios-and-android-6165757e3fdb
+- Prepare two image with size (1024px x 1024px, 72PPI). First image with square background for `ic_launcher.png` and the second with round background for `ic_launcher_round.png`
+- Generate `App icon` using `https://appicon.co`, and you will get generated files
+- Copy and replace generated files into `react-native-typescript\android\app\src\main\res\`
 
 ## How To Change Splash Screen
 You can check this tutorial for the detail https://blog.logrocket.com/building-a-splash-screen-in-react-native/
