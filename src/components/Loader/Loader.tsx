@@ -15,7 +15,6 @@ interface ILoader {}
 
 const Loader = ({}: ILoader) => {
   const CORE = useSelector(CORE_SELECTOR);
-  console.log('CORE.isLoading', CORE.isLoading);
 
   return (
     <Modal transparent={false} animationType="fade" visible={CORE.isLoading}>
