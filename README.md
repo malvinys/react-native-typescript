@@ -14,6 +14,16 @@ This project is my personal template project for react-native-typescript and i w
 - Open your first terminal and run `yarn start`
 - Open your second terminal and run `yarn android` 
 
+## How To Run Debugger
+First, you must install https://github.com/jhen0409/react-native-debugger
+- Open your `React Native Debugger`
+- Open your project
+- In `terminal 1`, run `yarn start`
+- In `terminal 2`, run `yarn android`
+- And then, in `terminal 1` press `d` to open developer menu
+- In emulator, choose `debug`
+- Check your `React Native Debugger` and your app will connected
+
 ## How To Change App Name
 You can check this tutorial for the detail https://stackoverflow.com/questions/38580858/how-to-change-display-name-of-an-app-in-react-native
 - Search `app_name`
