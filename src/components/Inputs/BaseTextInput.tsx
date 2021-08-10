@@ -16,12 +16,12 @@ const BaseTextInput = (props: IBaseTextInput) => (
 const style = StyleSheet.create({
   input: {
     width: '100%',
-    padding: 12,
-    paddingHorizontal: 16,
+    padding: 4,
+    paddingHorizontal: 8,
     borderRadius: 4,
-    fontSize: 16,
     color: Colors.BLACK,
     backgroundColor: Colors.WHITE,
+    fontSize: 16,
   },
 });
 

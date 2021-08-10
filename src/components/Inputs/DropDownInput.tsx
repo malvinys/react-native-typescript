@@ -43,6 +43,9 @@ const style = StyleSheet.create({
   },
   dropDown: {
     width: '100%',
+    height: 46,
+    marginLeft: -8,
+    marginTop: -6,
     backgroundColor: Colors.WHITE,
   },
 });
