@@ -6,6 +6,7 @@ import Colors from '../../config/Theme/Colors';
 interface IProgressBar extends ViewProps {
   progress: string;
   styleProps?: {
+    styleProgressContainer?: ViewStyle;
     styleProgressBackground?: ViewStyle;
     styleProgressBar?: ViewStyle;
   };
@@ -13,18 +14,22 @@ interface IProgressBar extends ViewProps {
 
 const ProgressBar = (props: IProgressBar) => {
   const progress = props.progress || '0%';
+  const styleProgressContainer =
+    props?.styleProps?.styleProgressContainer || {};
   const styleProgressBackground =
     props?.styleProps?.styleProgressBackground || {};
   const styleProgressBar = props?.styleProps?.styleProgressBar || {};
 
   return (
     <>
-      <View
-        style={[style.progressBackground, styleProgressBackground]}
-        {...props}>
+      <View style={[styleProgressContainer]}>
         <View
-          style={[{width: progress}, style.progressBar, styleProgressBar]}
-        />
+          style={[style.progressBackground, styleProgressBackground]}
+          {...props}>
+          <View
+            style={[{width: progress}, style.progressBar, styleProgressBar]}
+          />
+        </View>
       </View>
     </>
   );
