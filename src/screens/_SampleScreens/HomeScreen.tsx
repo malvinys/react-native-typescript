@@ -6,7 +6,7 @@ import Colors from '../../config/Theme/Colors';
 import Container from '../../components/Container/Container';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import Card from '../../components/Card/Card';
+import {BaseCard} from '../../components/Cards/Cards';
 import ImageIcon from '../../components/Image/ImageIcon/ImageIcon';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import {WALLET_ICON} from '../../components/Icons/Icons';
@@ -24,7 +24,7 @@ const HomeScreen = ({navigation}: IHomeScreen) => {
       <Header />
       <Container>
         <TouchableOpacity onPress={() => handleCardClick()}>
-          <Card styleProps={{...style.cardContainer}}>
+          <BaseCard styleProps={{...style.cardContainer}}>
             <ImageIcon
               iconSource={WALLET_ICON}
               styleProps={{styleContainer: {...style.cardImage}}}
@@ -33,7 +33,7 @@ const HomeScreen = ({navigation}: IHomeScreen) => {
               <Text>Test Card</Text>
               <ProgressBar progress="70%" />
             </View>
-          </Card>
+          </BaseCard>
         </TouchableOpacity>
       </Container>
       <Footer styleProps={{...style.footer}}>

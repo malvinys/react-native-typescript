@@ -3,27 +3,27 @@ import {View, ViewProps, ViewStyle, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
-interface ICard extends ViewProps {
+interface IBaseCard extends ViewProps {
   styleProps?: ViewStyle;
   children?: React.ReactNode;
 }
 
-const Card = (props: ICard) => (
+const BaseCard = (props: IBaseCard) => (
   <>
-    <View style={[style.card, props.styleProps]} {...props}>
+    <View style={[style.baseCard, props.styleProps]} {...props}>
       {props.children}
     </View>
   </>
 );
 
 const style = StyleSheet.create({
-  card: {
+  baseCard: {
     width: '100%',
     height: 'auto',
-    padding: 8,
+    padding: 18,
     borderRadius: 4,
-    backgroundColor: Colors.GREY_LIGHT,
+    backgroundColor: Colors.BACKGROUND_TAB,
   },
 });
 
-export default Card;
+export default BaseCard;
