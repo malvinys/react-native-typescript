@@ -15,7 +15,7 @@ const BaseTextInput = (props: IBaseTextInput) => (
 
 const style = StyleSheet.create({
   input: {
-    width: 200,
+    width: '100%',
     padding: 4,
     paddingHorizontal: 8,
     borderRadius: 4,
