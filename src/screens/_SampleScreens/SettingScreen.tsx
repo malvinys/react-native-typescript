@@ -1,8 +1,8 @@
 import React from 'react';
 import {Button} from 'react-native';
 
-import Container from '../components/Container/Container';
-import Footer from '../components/Footer/Footer';
+import Container from '../../components/Container/Container';
+import Footer from '../../components/Footer/Footer';
 
 interface ISettingScreen {
   navigation: any;

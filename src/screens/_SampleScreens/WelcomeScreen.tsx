@@ -2,11 +2,11 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Button} from 'react-native';
 
-import {CORE_ACTIONS, CORE_SELECTOR} from '../models/CoreModel';
+import {CORE_ACTIONS, CORE_SELECTOR} from '../../models/CoreModel';
 
-import Containter from '../components/Container/Container';
-import Footer from '../components/Footer/Footer';
-import Loader from '../components/Loader/Loader';
+import Containter from '../../components/Container/Container';
+import Footer from '../../components/Footer/Footer';
+import Loader from '../../components/Loader/Loader';
 
 interface IWelcomeScreen {
   navigation: any;

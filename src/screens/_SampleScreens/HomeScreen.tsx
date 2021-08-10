@@ -1,15 +1,15 @@
 import React from 'react';
 import {Button, Text, TouchableOpacity, View, StyleSheet} from 'react-native';
 
-import Colors from '../config/Theme/Colors';
+import Colors from '../../config/Theme/Colors';
 
-import Container from '../components/Container/Container';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
-import Card from '../components/Card/Card';
-import ImageIcon from '../components/Image/ImageIcon/ImageIcon';
-import ProgressBar from '../components/ProgressBar/ProgressBar';
-import {WALLET_ICON} from '../components/Icons/Icons';
+import Container from '../../components/Container/Container';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import Card from '../../components/Card/Card';
+import ImageIcon from '../../components/Image/ImageIcon/ImageIcon';
+import ProgressBar from '../../components/ProgressBar/ProgressBar';
+import {WALLET_ICON} from '../../components/Icons/Icons';
 
 interface IHomeScreen {
   navigation: any;

@@ -5,8 +5,8 @@ import {Image, StyleSheet} from 'react-native';
 import {HOME_ICON, SETTING_ICON} from '../components/Icons/Icons';
 import Colors from '../config/Theme/Colors';
 
-import HomeScreen from '../screens/HomeScreen';
-import SettingScreen from '../screens/SettingScreen';
+import HomeScreen from '../screens/_SampleScreens/HomeScreen';
+import SettingScreen from '../screens/_SampleScreens/SettingScreen';
 
 export type TabParamList = {
   Home: undefined;

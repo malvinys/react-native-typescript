@@ -10,8 +10,8 @@ import {StyleSheet} from 'react-native';
 import Colors from '../config/Theme/Colors';
 
 import TabNavigator, {TabParamList} from './TabNavigator';
-import WelcomeScreen from '../screens/WelcomeScreen';
-import DetailScreen from '../screens/DetailScreen';
+import WelcomeScreen from '../screens/_SampleScreens/WelcomeScreen';
+import DetailScreen from '../screens/_SampleScreens/DetailScreen';
 
 export type RootParamList = {
   Tab: NavigatorScreenParams<TabParamList>;
