@@ -1,29 +1,23 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, ViewProps, ViewStyle, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
-interface ILine {
-  color?: string;
-  width?: number;
-  styleProps?: any;
+interface ILine extends ViewProps {
+  styleProps?: ViewStyle;
 }
 
-const Line = ({color = Colors.LINE, width = 0.5, styleProps}: ILine) => (
+const Line = (props: ILine) => (
   <>
-    <View
-      style={{
-        borderColor: color,
-        borderWidth: width,
-        ...style.line,
-        ...styleProps,
-      }}
-    />
+    <View style={[style.line, props.styleProps]} {...props} />
   </>
 );
 
 const style = StyleSheet.create({
-  line: {},
+  line: {
+    borderColor: Colors.LINE,
+    borderWidth: 0.5,
+  },
 });
 
 export default Line;

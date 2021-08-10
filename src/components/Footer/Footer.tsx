@@ -1,28 +1,25 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, ViewProps, ViewStyle, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
-interface IFooter {
-  backgroundColor?: string;
-  styleProps?: any;
-  children: React.ReactNode;
+interface IFooter extends ViewProps {
+  styleProps?: ViewStyle;
+  children?: React.ReactNode;
 }
 
-const Footer = ({
-  backgroundColor = Colors.BACKGROUND,
-  styleProps,
-  children,
-}: IFooter) => (
+const Footer = (props: IFooter) => (
   <>
-    <View style={{backgroundColor, ...style.footer, ...styleProps}}>
-      {children}
+    <View style={[style.footer, props.styleProps]} {...props}>
+      {props.children}
     </View>
   </>
 );
 
 const style = StyleSheet.create({
-  footer: {},
+  footer: {
+    backgroundColor: Colors.BACKGROUND,
+  },
 });
 
 export default Footer;

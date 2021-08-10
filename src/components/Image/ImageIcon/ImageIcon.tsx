@@ -1,43 +1,40 @@
 import React from 'react';
-import {View, Image, StyleSheet} from 'react-native';
+import {
+  Image,
+  ImageStyle,
+  View,
+  ViewProps,
+  ViewStyle,
+  StyleSheet,
+} from 'react-native';
 
 import Colors from '../../../config/Theme/Colors';
 
-interface IImageIcon {
+interface IImageIcon extends ViewProps {
   iconSource: any;
-  color?: string;
-  backgroundColor?: string;
   styleProps?: {
-    styleContainerProps?: any;
-    styleContentProps?: any;
+    styleContainer?: ViewStyle;
+    styleContent?: ImageStyle;
   };
 }
 
-const ImageIcon = ({
-  iconSource,
-  backgroundColor = Colors.SECONDARY,
-  color = Colors.WHITE,
-  styleProps = {styleContainerProps: {}, styleContentProps: {}},
-}: IImageIcon) => (
-  <>
-    <View
-      style={{
-        backgroundColor,
-        ...style.imageIconContainer,
-        ...styleProps.styleContainerProps,
-      }}>
-      <Image
-        source={iconSource}
-        style={{
-          tintColor: color,
-          ...style.imageIconContent,
-          ...styleProps.styleContentProps,
-        }}
-        resizeMode="contain"
-      />
-    </View>
-  </>
-);
+const ImageIcon = (props: IImageIcon) => {
+  const iconSource = props.iconSource;
+  const styleContainer = props?.styleProps?.styleContainer || {};
+  const styleContent = props?.styleProps?.styleContent || {};
+
+  return (
+    <>
+      <View style={[style.imageIconContainer, styleContainer]} {...props}>
+        <Image
+          source={iconSource}
+          style={[style.imageIconContent, styleContent]}
+          resizeMode="contain"
+        />
+      </View>
+    </>
+  );
+};
 
 const style = StyleSheet.create({
   imageIconContainer: {
@@ -46,10 +43,12 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 4,
+    backgroundColor: Colors.SECONDARY,
   },
   imageIconContent: {
     height: 26,
     width: 26,
+    tintColor: Colors.WHITE,
   },
 });
 

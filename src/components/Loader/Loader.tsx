@@ -13,11 +13,15 @@ import Colors from '../../config/Theme/Colors';
 
 interface ILoader {}
 
-const Loader = ({}: ILoader) => {
+const Loader = (props: ILoader) => {
   const CORE = useSelector(CORE_SELECTOR);
 
   return (
-    <Modal transparent={false} animationType="fade" visible={CORE.isLoading}>
+    <Modal
+      transparent={false}
+      animationType="fade"
+      visible={CORE.isLoading}
+      {...props}>
       <TouchableOpacity activeOpacity={1} style={style.loaderContainer}>
         <Text style={{...style.loaderText}}>Loading...</Text>
       </TouchableOpacity>

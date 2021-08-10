@@ -27,7 +27,7 @@ const HomeScreen = ({navigation}: IHomeScreen) => {
           <Card styleProps={{...style.cardContainer}}>
             <ImageIcon
               iconSource={WALLET_ICON}
-              styleProps={{styleContainerProps: {...style.cardImage}}}
+              styleProps={{styleContainer: {...style.cardImage}}}
             />
             <View style={{...style.cardContent}}>
               <Text>Test Card</Text>

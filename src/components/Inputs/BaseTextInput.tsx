@@ -1,13 +1,15 @@
 import React from 'react';
-import {TextInput, TextInputProps, StyleSheet} from 'react-native';
+import {TextInput, TextInputProps, TextStyle, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
-interface IBaseTextInput extends TextInputProps {}
+interface IBaseTextInput extends TextInputProps {
+  styleProps?: TextStyle;
+}
 
 const BaseTextInput = (props: IBaseTextInput) => (
   <>
-    <TextInput style={[style.input, props.style]} {...props} />
+    <TextInput style={[style.input, props.styleProps]} {...props} />
   </>
 );
 

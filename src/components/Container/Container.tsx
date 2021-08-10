@@ -1,17 +1,17 @@
 import React from 'react';
-import {View, ScrollView, StyleSheet} from 'react-native';
+import {View, ViewProps, ViewStyle, ScrollView, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
-interface IContainer {
-  styleProps?: any;
+interface IContainer extends ViewProps {
+  styleProps?: ViewStyle;
   children?: React.ReactNode;
 }
 
-const Container = ({styleProps, children}: IContainer) => (
+const Container = (props: IContainer) => (
   <>
-    <View style={{...style.container, ...styleProps}}>
-      <ScrollView>{children}</ScrollView>
+    <View style={[style.container, props.styleProps]} {...props}>
+      <ScrollView>{props.children}</ScrollView>
     </View>
   </>
 );

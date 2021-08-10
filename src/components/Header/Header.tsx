@@ -1,51 +1,47 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {
+  Text,
+  TextStyle,
+  View,
+  ViewProps,
+  ViewStyle,
+  StyleSheet,
+} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 import Constant from '../../config/Constant/Constant';
 
-interface IHeader {
+interface IHeader extends ViewProps {
   title?: string;
-  titleColor?: string;
-  backgroundColor?: string;
   styleProps?: {
-    styleContainerProps?: any;
-    styleContentProps?: any;
+    styleContainer?: ViewStyle;
+    styleContent?: TextStyle;
   };
 }
 
-const Header = ({
-  title = Constant.APP_NAME,
-  titleColor = Colors.TEXT,
-  backgroundColor = Colors.BACKGROUND,
-  styleProps = {styleContainerProps: {}, styleContentProps: {}},
-}: IHeader) => (
-  <>
-    <View
-      style={{
-        backgroundColor,
-        ...style.headerContainer,
-        ...styleProps.styleContainerProps,
-      }}>
-      <Text
-        style={{
-          color: titleColor,
-          ...style.headerTitle,
-          ...styleProps.styleContentProps,
-        }}>
-        {title}
-      </Text>
-    </View>
-  </>
-);
+const Header = (props: IHeader) => {
+  const title = props.title || Constant.APP_NAME;
+  const styleContainer = props?.styleProps?.styleContainer || {};
+  const styleContent = props?.styleProps?.styleContent || {};
+
+  return (
+    <>
+      <View style={[style.headerContainer, styleContainer]} {...props}>
+        <Text style={[style.headerTitle, styleContent]}>{title}</Text>
+      </View>
+    </>
+  );
+};
 
 const style = StyleSheet.create({
   headerContainer: {
     paddingVertical: 8,
     paddingHorizontal: 16,
+    backgroundColor: Colors.BACKGROUND,
   },
   headerTitle: {
     fontSize: 16,
+    color: Colors.TEXT,
   },
 });
 

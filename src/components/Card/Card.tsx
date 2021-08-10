@@ -1,22 +1,17 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, ViewProps, ViewStyle, StyleSheet} from 'react-native';
 
 import Colors from '../../config/Theme/Colors';
 
-interface ICard {
-  backgroundColor?: string;
-  styleProps?: any;
-  children: React.ReactNode;
+interface ICard extends ViewProps {
+  styleProps?: ViewStyle;
+  children?: React.ReactNode;
 }
 
-const Card = ({
-  backgroundColor = Colors.GREY_LIGHT,
-  styleProps,
-  children,
-}: ICard) => (
+const Card = (props: ICard) => (
   <>
-    <View style={{backgroundColor, ...style.card, ...styleProps}}>
-      {children}
+    <View style={[style.card, props.styleProps]} {...props}>
+      {props.children}
     </View>
   </>
 );
@@ -27,6 +22,7 @@ const style = StyleSheet.create({
     height: 'auto',
     padding: 8,
     borderRadius: 4,
+    backgroundColor: Colors.GREY_LIGHT,
   },
 });
 
