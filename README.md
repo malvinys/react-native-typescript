@@ -56,5 +56,16 @@ You can check this tutorial for the detail https://blog.logrocket.com/building-a
 
 ## How To Bundle Project
 - Android (APK)
-  - Run `yarn bundle:android`
-  - Open react-native-typescript\android\app\build\outputs\apk\debug\app-debug.apk`
+  - Debug
+    You can check this tutorial
+    - https://medium.com/@adityasingh_32512/solved-unable-to-load-script-from-assets-index-android-bundle-bdc5e3a3d5ff
+    - https://rey1024.medium.com/generate-apk-debug-pada-react-native-75c4d538d6df
+
+    Steps:
+    - Go to your project directory and check if this folder exists `react-native-typescript\android\app\src\main\assets`
+    - If it exists then delete two files viz `index.android.bundle` and `index.android.bundle.meta`
+    - Open directory `react-native-typescript\android\`
+    - Run `gradlew clean`
+    - Back into root project and run `react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res`
+    - Open directory `react-native-typescript\android\` and run `gradlew assembleDebug`
+    - Check output file in `android/app/build/outputs/apk/`
